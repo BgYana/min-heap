@@ -1,5 +1,5 @@
 import unittest
-from main import MinHeap
+from heap import MinHeap
 
 
 class TestMinHeap(unittest.TestCase):
