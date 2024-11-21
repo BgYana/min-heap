@@ -43,8 +43,11 @@ class MinHeap:
         if not self._heap:
             raise IndexError("Cannot extract minimum: heap is empty")
         min_value = self._heap[0]
-        self._heap[0] = self._heap.pop()
-        self._heapify_down(0)
+        if len(self._heap) > 1:
+            self._heap[0] = self._heap.pop()
+            self._heapify_down(0)
+        else:
+            self._heap.pop()
         return min_value
 
     def get_min(self):
@@ -57,4 +60,4 @@ class MinHeap:
 
     def size(self):
         return len(self._heap)
-    
+
